@@ -1,0 +1,28 @@
+My first trial takes into account only the sex of the passenger.
+The accuracy was 36% when tested on 'test.csv'
+I manually defined the rules, but intend to try using weights later.
+
+My second trial used numpy to find a regression funciton
+Sex:Survival can be most accurately represented by:
+y = 9.752050297852338e-05x^2 + -0.008954764932735504x + 0.5655444634114561
+where y is the survival rate
+The rule is still manually defined, but this better fits the data.
+Accuracy is 38%
+
+My third trial used two regressions... one for sex and age. And averaged the two.
+Accuracy is 54% for the training dataset but 37% for the test dataset.
+Overfitting?
+
+My fourth trial used a multivariable linear regression for six variables:
+sex, age, sibsp, pach, pclass, fare
+Accuracy is 38% ... error 61%
+
+I fixed my error calculation.
+accuracy% = float((samples - samples_missed)/samples)*100
+Accuracy is 61% error is 38%
+
+I added a different activation function.
+After calculating the score from the mulivariable regression I used to use
+a sigmoid function.  Now, after the sigmoid function if the value is greater
+than 0.3 it becomes 1 else 0.
+Accuracy is 96% error is 3%
