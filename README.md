@@ -1,1 +1,1 @@
-# comp379
+# comp379 - Machine Learning
